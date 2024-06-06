@@ -1,0 +1,112 @@
+.pt12 {
+  margin-top: 12px;
+}
+.sidebar {
+  width: 216px;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 12px;
+
+}
+.sidebar::-webkit-scrollbar {
+  width: 8px; /* Độ rộng của thanh cuộn */
+}
+.sidebar::-webkit-scrollbar-track {
+  background: #fff; /* Màu nền của track */
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background: #909090; /* Màu của thanh cuộn */
+  border-radius: 4px; /* Bo góc của thanh cuộn */
+}
+.sidebar__top {
+  position: relative;
+}
+.sidebar__item-act {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 12px;
+}
+.sidebar__item-act:hover {
+  background: #e9e9e9;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.sidebar__item-icon {
+  width: 20px;
+  height: 20px;
+}
+.sidebar__item-text {
+  display: inline-block;
+  padding-left: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.4rem;
+}
+.sidebar__top::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #ebebeb;
+  bottom: -12px;
+}
+.sidebar__middle {
+  position: relative;
+  padding-top: 12px;
+}
+.sidebar__middle::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #ebebeb;
+  bottom: -12px;
+}
+.sidebar__middle-header {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+.sidebar__middle-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 12px;
+}
+.sidebar__middle__text {
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.6rem;
+}
+.sidebar__bottom {
+  margin-top: 12px;
+  padding-top: 12px;
+  text-decoration: none;
+  display: flex;
+}
+.sidebar__bottom-inner {
+  padding-left: 12px;
+}
+.sidebar__bottom-links {
+  padding-left: 0;
+}
+.sidebar__bottom-link a {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  font-weight: 600;
+  list-style: none;
+  text-decoration: none;
+  color: #606060;
+}
+.sidebar__bottom-copy-right {
+  padding-bottom: 12px;
+}
+.copy-right {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.2rem;
+  color: #909090;
+}

@@ -1,0 +1,24 @@
+  <div class="container">
+    <h2 class="list-title">Products</h2>
+  <div class="card-list">
+    <a  *ngFor="let product of products" href="">
+      <div class="card" *ngIf="!selectedCategory || product.categoryId === selectedCategory">
+        <div class="card-thumbnail">
+          <!-- Sử dụng property binding [src] -->
+          <!-- <img [src]="imageUrl + product.image" alt="" /> -->
+          <img [src]="imageUrl + product.image" alt="" />
+
+        </div>
+        <div class="card-content">
+          <div class="card-content__wrap">
+            <p class="card-content__title">
+              {{ product.name }}
+            </p>
+            <span class="card-content__views"> {{ product.price | currency:'VND':'symbol-narrow':'1.0-2' }}</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  </div>

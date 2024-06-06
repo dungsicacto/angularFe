@@ -1,0 +1,111 @@
+<div class="sidebar">
+  <div class="sidebar__top">
+    <div class="sidebar__list-act">
+      <div class="sidebar__item-act">
+        <img
+          src="../../../assets/icons/package.png"
+          alt=""
+          class="sidebar__item-icon"
+        />
+        <span class="sidebar__item-text">All Proudcts</span>
+      </div>
+      <div class="sidebar__item-act">
+        <img
+          src="../../../assets/icons/category.png"
+          alt=""
+          class="sidebar__item-icon"
+        />
+        <span class="sidebar__item-text">Hot</span>
+      </div>
+      <div class="sidebar__item-act">
+        <img
+          src="../../../assets/icons/customer.png"
+          alt=""
+          class="sidebar__item-icon"
+        />
+        <span class="sidebar__item-text">Super Sales</span>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar__middle">
+    <div class="sidebar__middle-header">
+      <div class="sidebar__middle__text">Categories</div>
+      <img
+        src="../../../assets/icons/chevron.png"
+        alt=""
+        class="sidebar__middle-icon"
+      />
+    </div>
+    <div class="sidebar__list-act">
+      <div *ngFor = "let category of categories" (click) = "selectCategory(category._id)"class="sidebar__item-act">
+        <img
+          src="../../../assets/icons/chevron.png"
+          alt=""
+          class="sidebar__item-icon"
+        />
+        <span class="sidebar__item-text">{{category.name}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar__middle">
+    <div class="sidebar__list-act">
+      <div class="sidebar__item-act pt12">
+        <img
+          src="../../../assets/icons/setting.png"
+          alt=""
+          class="sidebar__item-icon"
+        />
+        <span class="sidebar__item-text">Settings</span>
+      </div>
+      <div class="sidebar__item-act">
+        <img
+          src="../../../assets/icons/red-flag.png"
+          alt=""
+          class="sidebar__item-icon"
+        />
+        <span class="sidebar__item-text">Report History</span>
+      </div>
+      <div class="sidebar__item-act">
+        <img
+          src="../../../assets/icons/history.png"
+          alt=""
+          class="sidebar__item-icon"
+        />
+        <span class="sidebar__item-text">Help</span>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar__bottom">
+    <div class="sidebar__bottom-inner">
+      <div class="sidebar__bottom-content">
+        <ul class="sidebar__bottom-links">
+          <li class="sidebar__bottom-link">
+            <a href="#">About Press Copyright</a>
+          </li>
+          <li class="sidebar__bottom-link">
+            <a href="#">Contact Us Creator Advertise</a>
+          </li>
+          <li class="sidebar__bottom-link">
+            <a href="#">Developers</a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar__bottom-content pt12">
+        <ul class="sidebar__bottom-links">
+          <li class="sidebar__bottom-link">
+            <a href="#">TermsPrivacyPolicy & Safety</a>
+          </li>
+          <li class="sidebar__bottom-link">
+            <a href="#">How YouTube works</a>
+          </li>
+          <li class="sidebar__bottom-link">
+            <a href="#">Test new features</a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar__bottom-copy-right pt12">
+        <span class="copy-right">2024 Google LLc</span>
+      </div>
+    </div>
+  </div>
+</div>
