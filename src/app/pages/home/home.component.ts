@@ -3,7 +3,7 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
 import { RouterOutlet } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import {} from '@angular/common/http';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     SidebarComponent,
     ProductCardComponent,
-    HttpClientModule,
+// HttpClientModule,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
