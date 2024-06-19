@@ -1,0 +1,33 @@
+
+<app-navbar></app-navbar>
+<div class="container">
+  <app-admin-sidebar></app-admin-sidebar>
+  <div class="main-container">
+    <a href="#" class="btn-primary mb-40" routerLink="/admin/createproduct">
+      Create Product
+    </a>
+    <table>
+      <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td colspan="2">Action</td>
+      </tr>
+      <tr *ngFor="let category of categories">
+        <td>{{ category._id }}</td>
+        <td>{{ category.name }}</td>
+
+        <td>
+          <button (click)="deleteCategory(category._id)" class="btn-warning">Delete</button>
+        </td>
+        <td>
+          <button class="btn-danger">
+            <a href="#" [routerLink]="['/category/', category._id, 'editsp']"
+              >Edit</a
+            >
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<router-outlet></router-outlet>

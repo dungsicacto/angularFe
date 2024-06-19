@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div class="container">
   <app-sidebar (categorySelected)="onCategorySelect($event)"></app-sidebar>
-  <app-product-card [selectedCategory]="selectedCategory" ></app-product-card>
+  <app-product-card [selectedCategory]="selectedCategory" class="ml-20" ></app-product-card>
 </div>
 <router-outlet></router-outlet>

@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <app-sidebar></app-sidebar>
+  <div class="order-list">
+    <h2>Order List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th class="text-start">Name</th>
+          <th>Status</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let order of orders">
+        <tr *ngFor="let item of order.CTHD">
+          <td class="text-start">{{ item.name }}</td>
+          <td>{{ getStatusText(order.status) }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>
+            {{ item.price | currency : "VND" : "symbol-narrow" : "1.0-2" }}
+          </td>
+          <td>
+            {{
+              item.quantity * item.price
+                | currency : "VND" : "symbol-narrow" : "1.0-2"
+            }}
+          </td>
+          <td>
+            <button (click)="cancelOrder(order._id)" [disabled]="order.status !== 0" class="btn-danger">
+              Cannel Order
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<router-outlet></router-outlet>

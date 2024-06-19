@@ -1,4 +1,6 @@
 .container{
   display: flex;
-  justify-content: space-between;
+}
+.ml-20{
+  margin-left: 25px;
 }

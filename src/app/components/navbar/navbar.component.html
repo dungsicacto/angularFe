@@ -5,35 +5,69 @@
         <img src="../../../assets/icons/menu.png" class="nav__menu" />
       </div>
       <a href="/" class="nav__logo--link">
-        <img src="../../../assets/icons/yaotube.png"  class="nav__logo" />
+        <img src="../../../assets/icons/yaotube.png" class="nav__logo" />
       </a>
     </div>
     <div class="nav__middle">
       <div class="search__box">
         <input type="text" class="search__input" />
         <button class="search__btn">
-          <img src="../../../assets/icons/search-navbar.png"  class="search__btn--img" />
+          <img
+            src="../../../assets/icons/search-navbar.png"
+            class="search__btn--img"
+          />
         </button>
       </div>
     </div>
-    <!-- <div class="nav__right">
+    <div *ngIf="isUser; else guestMenu" class="nav__right">
       <div class="right__act--wrap">
-        <img src="../../../assets/icons/bell.png"  class="right__act--icon" />
+        <img src="../../../assets/icons/bell.png" class="right__act--icon" />
       </div>
-      <div class="right__avt-wrap">
+      <div class="right__avt-wrap" (click)="toggleUserModal()">
         <img
           src="https://yt3.ggpht.com/ytc/AIdro_kr4bNGofmTMPp5MZXDPMJK5LVxode4q5XfL_KkDT6k-92DsDa2ZJkQL47K5Z7lphmMUw=s88-c-k-c0x00ffffff-no-rj"
-
           class="right__act--icon right__act--avt"
         />
       </div>
-    </div> -->
-    <div class="nav__right">
-      <mat-dialog-actions>
-        <button mat-raised-button (click)="openDialog()" class="btn-primary">Register</button>
-      </mat-dialog-actions>
-      <button class="btn-primary">Login</button>
     </div>
+    <ng-template #guestMenu>
+      <div class="nav__right">
+        <mat-dialog-actions>
+          <button
+            mat-raised-button
+            (click)="openDialogRegister()"
+            class="btn-primary"
+          >
+            Register
+          </button>
+        </mat-dialog-actions>
+        <button
+          mat-raised-button
+          (click)="openDialogLogin()"
+          class="btn-primary"
+        >
+          Login
+        </button>
+      </div>
+    </ng-template>
   </div>
 </nav>
-
+<!-- usermodal -->
+<div
+  id="userModal"
+  class="modal"
+  [ngClass]="{ show: isModalVisible }"
+  (click)="(toggleUserModal)"
+>
+  <div class="modal-content">
+    <span class="close" (click)="toggleUserModal()">&times;</span>
+    <ul class="list-actions">
+      <li class="iem-action">Xin chao,</li>
+      <li class="iem-action">Profile</li>
+      <li class="iem-action">Setting</li>
+      <li class="iem-action">Your orders</li>
+      <li class="iem-action" *ngIf="isAdmin === 1 " (click)="goToAdmin()">Go to Admin</li>
+    </ul>
+    <a  class="item-action__logout" (click)="logout()">Logout</a>
+  </div>
+</div>

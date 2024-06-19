@@ -1,0 +1,45 @@
+<button mat-icon-button mat-dialog-close="x" class="modalClose">
+  <mat-icon>x</mat-icon>
+</button>
+<mat-dialog-content>
+  <header>
+    <h1>Login</h1>
+  </header>
+  <form [formGroup]="form" (ngSubmit)="handleLogin()">
+    <mat-form-field>
+      <input
+        type="email"
+        matInput
+        placeholder="Email"
+        id="email"
+        formControlName="email"
+      />
+      <div *ngIf="f['email'].touched && f['email'].invalid">
+        <div *ngIf="f['email'].errors && f['email'].errors['required']">
+          Email is required
+        </div>
+      </div>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        type="password"
+        matInput
+        placeholder="Password"
+        id="password"
+        formControlName="password"
+      />
+      <div *ngIf="f['password'].touched && f['password'].invalid">
+        <div *ngIf="f['password'].errors && f['password'].errors['required']">
+          Password is required
+        </div>
+      </div>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button type="submit" mat-raised-button color="warn" class="modalAction"
+  (click)="handleLogin()"
+  >
+    Login
+  </button>
+</mat-dialog-actions>

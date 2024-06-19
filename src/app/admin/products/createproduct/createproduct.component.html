@@ -1,0 +1,93 @@
+
+<app-navbar></app-navbar>
+<div class="container">
+  <app-admin-sidebar></app-admin-sidebar>
+  <div class="main-container">
+    <form [formGroup]="form" (ngSubmit)="submit()" class="form">
+      <label>Select Category</label>
+      <select name="categoryId" id="categoryId" formControlName="categoryId">
+        <option selected>Choose category</option>
+        <option *ngFor="let category of categories" [value]="category._id">
+          {{ category.name }}
+        </option>
+      </select>
+      <div *ngIf="f['categoryId'].touched && f['categoryId'].invalid">
+        <div
+          *ngIf="f['categoryId'].errors && f['categoryId'].errors['required']"
+        >
+          must be select category
+        </div>
+      </div>
+      <label>Product Name</label>
+      <input type="text" id="name" formControlName="name" />
+      <div *ngIf="f['name'].touched && f['name'].invalid">
+        <div *ngIf="f['name'].errors && f['name'].errors['required']">
+          name is required
+        </div>
+      </div>
+
+      <label>Price</label>
+      <input
+        type="text"
+        id="price"
+        formControlName="price"
+      />
+      <div *ngIf="f['price'].touched && f['price'].invalid">
+        <div *ngIf="f['price'].errors && f['price'].errors['required']">
+          price is required
+        </div>
+      </div>
+
+      <label>Image</label>
+      <input
+        type="file"
+        id="image"
+        formControlName="image"
+      />
+      <div *ngIf="f['image'].touched && f['image'].invalid">
+        <div *ngIf="f['image'].errors && f['image'].errors['required']">
+          image is required
+        </div>
+      </div>
+
+      <label>Description</label>
+      <textarea
+        id="description"
+        formControlName="description"
+      ></textarea>
+      <div *ngIf="f['description'].touched && f['description'].invalid">
+        <div
+          *ngIf="f['description'].errors && f['description'].errors['required']"
+        >
+          description is required
+        </div>
+      </div>
+
+      <label>Quantity</label>
+      <input
+        type="text"
+        id="quantity"
+        formControlName="quantity"
+      />
+      <div *ngIf="f['quantity'].touched && f['quantity'].invalid">
+        <div *ngIf="f['quantity'].errors && f['quantity'].errors['required']">
+          quantity is required
+        </div>
+      </div>
+
+      <label>Status</label>
+      <select name="status" id="status" formControlName="status">
+        <option selected>Choose status</option>
+        <option value="1">Active</option>
+        <option value="0">Inactive</option>
+      </select>
+      <div *ngIf="f['status'].touched && f['status'].invalid">
+        <div *ngIf="f['status'].errors && f['status'].errors['required']">
+          status is required
+        </div>
+      </div>
+      <button type="submit" [disabled]="!form.valid" class="btn">Create</button>
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

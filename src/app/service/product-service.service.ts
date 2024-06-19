@@ -14,13 +14,15 @@ export class ProductService {
   constructor(private httpClient: HttpClient) {}
   createProduct(product: Iproduct): Observable<any> {
     return this.httpClient
-      .post(
+      .post(  
         this.url + '/product/add',
         JSON.stringify(product),
         this.httpOptions
       )
       .pipe(
         catchError((error: HttpErrorResponse) => {
+          console.log(product);
+
           return throwError(error);
         })
       );
@@ -32,7 +34,7 @@ export class ProductService {
   }
   deleteProduct(id: string): Observable<any> {
     return this.httpClient
-      .delete(this.url + '/products/' + id)
+      .delete(this.url + '/product/' + id)
       .pipe(catchError((error: HttpErrorResponse) => throwError(error)));
   }
   updateProduct(id: string, product: Iproduct): Observable<any> {

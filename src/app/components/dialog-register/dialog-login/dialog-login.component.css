@@ -1,0 +1,15 @@
+.modalClose {
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+.modalAction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  margin-left: 8px;
+}

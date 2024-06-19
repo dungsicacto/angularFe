@@ -1,1 +1,34 @@
-<p>cart works!</p>
+<app-navbar></app-navbar>
+<div class="container">
+  <app-sidebar></app-sidebar>
+<!-- cart.component.html -->
+<div class="cart">
+  <h2>Your Cart</h2>
+  <div *ngIf="cartItems.length === 0" class="cart-empty">
+    <p>Your cart is empty.</p>
+  </div>
+  <div *ngIf="cartItems.length > 0">
+    <div *ngFor="let item of cartItems" class="cart-item">
+      <img [src]="imageUrl+item.image" alt="{{ item.name }}" class="cart-item-image">
+      <div class="cart-item-details">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.price | currency : "VND" : "symbol-narrow" : "1.0-2" }}</p>
+        <div class="quantity-controls">
+          <button (click)="decreaseQuantity(item)">-</button>
+          <span>{{ item.quantity  }}</span>
+          <button (click)="increaseQuantity(item)">+</button>
+        </div>
+        <button (click)="removeFromCart(item)">Remove</button>
+      </div>
+    </div>
+    <div class="cart-total">
+      Total: {{ getTotalPrice() | currency : "VND" : "symbol-narrow" : "1.0-2" }}
+      <button class="btn-primary" routerLink="/checkout">
+        Checkout
+      </button>
+      </div>
+  </div>
+</div>
+
+</div>
+<router-outlet></router-outlet>

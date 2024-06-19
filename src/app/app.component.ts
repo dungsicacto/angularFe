@@ -14,6 +14,7 @@ import {} from '@angular/common/http';
     SidebarComponent,
     ProductCardComponent,
   ],
+  providers: [HttpClient],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

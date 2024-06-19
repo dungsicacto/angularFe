@@ -1,0 +1,113 @@
+<button mat-icon-button style="float: right" mat-dialog-close="">
+  <mat-icon>x</mat-icon>
+</button>
+<mat-dialog-content>
+  <header>
+    <h1>Register</h1>
+  </header>
+  <form [formGroup]="form" (ngSubmit)="handleRegister()">
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        placeholder="Name"
+        id="name"
+        formControlName="name"
+      />
+      <div *ngIf="f['name'].touched && f['name'].invalid">
+        <div *ngIf="f['name'].errors && f['name'].errors['required']">
+          Name is required
+        </div>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="password"
+        matInput
+        placeholder="Password"
+        id="password"
+        formControlName="password"
+      />
+      <div *ngIf="f['password'].touched && f['password'].invalid">
+        <div *ngIf="f['password'].errors && f['password'].errors['required']">
+          name is required
+        </div>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="password"
+        matInput
+        placeholder="Repeat Password"
+        id="repeatpassword"
+        formControlName="repeatpassword"
+      />
+      <div *ngIf="f['repeatpassword'].touched && f['repeatpassword'].invalid">
+        <div
+          *ngIf="
+            f['repeatpassword'].errors && f['repeatpassword'].errors['required']
+          "
+        >
+          name is required
+        </div>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="email"
+        matInput
+        placeholder="Email"
+        id="email"
+        formControlName="email"
+      />
+      <div *ngIf="f['email'].touched && f['email'].invalid">
+        <div *ngIf="f['email'].errors && f['email'].errors['required']">
+          name is required
+        </div>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        placeholder="Address"
+        id="address"
+        formControlName="address"
+      />
+      <div *ngIf="f['address'].touched && f['address'].invalid">
+        <div *ngIf="f['address'].errors && f['address'].errors['required']">
+          name is required
+        </div>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        placeholder="Phone"
+        id="phone"
+        formControlName="phone"
+      />
+      <div *ngIf="f['phone'].touched && f['phone'].invalid">
+        <div *ngIf="f['phone'].errors && f['phone'].errors['required']">
+          name is required
+        </div>
+      </div>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button
+    type="submit"
+    mat-raised-button
+    color="warn"
+    (click)="handleRegister()"
+  >
+    Register
+  </button>
+</mat-dialog-actions>

@@ -1,49 +1,37 @@
 <div class="sidebar">
   <div class="sidebar__top">
     <div class="sidebar__list-act">
-      <div class="sidebar__item-act" routerLink="/cart">
+      <div class="sidebar__middle-header">
+        <div class="sidebar__middle__text">Admin</div>
+        <img
+          src="../../../assets/icons/chevron.png"
+          alt=""
+          class="sidebar__middle-icon"
+        />
+      </div>
+      <div class="sidebar__item-act" routerLink="/product" (click)="navigateProduct()">
         <img
           src="../../../assets/icons/package.png"
           alt=""
           class="sidebar__item-icon"
         />
-        <span class="sidebar__item-text">Your Cart</span>
+        <span class="sidebar__item-text">Products</span>
       </div>
-      <div class="sidebar__item-act">
+      <div class="sidebar__item-act" routerLink="/category" (click)="navigateCategory()">
         <img
           src="../../../assets/icons/category.png"
           alt=""
           class="sidebar__item-icon"
         />
-        <span class="sidebar__item-text" routerLink="/order">Your Orders</span>
+        <span class="sidebar__item-text" >Categories</span>
       </div>
-      <div class="sidebar__item-act">
+      <div class="sidebar__item-act" routerlik="/order" (click)="navigateOrder()">
         <img
           src="../../../assets/icons/customer.png"
           alt=""
           class="sidebar__item-icon"
         />
-        <span class="sidebar__item-text">Super Sales</span>
-      </div>
-    </div>
-  </div>
-  <div class="sidebar__middle">
-    <div class="sidebar__middle-header">
-      <div class="sidebar__middle__text">Categories</div>
-      <img
-        src="../../../assets/icons/chevron.png"
-        alt=""
-        class="sidebar__middle-icon"
-      />
-    </div>
-    <div class="sidebar__list-act">
-      <div *ngFor = "let category of categories" (click) = "selectCategory(category._id)"class="sidebar__item-act">
-        <img
-          src="../../../assets/icons/chevron.png"
-          alt=""
-          class="sidebar__item-icon"
-        />
-        <span class="sidebar__item-text">{{category.name}}</span>
+        <span class="sidebar__item-text" >Order</span>
       </div>
     </div>
   </div>
